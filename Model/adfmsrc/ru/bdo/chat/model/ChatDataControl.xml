@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.66.73"
+          id="ChatDataControl" Package="ru.bdo.chat.model"
+          BeanClass="ru.bdo.chat.model.ChatDataControl" isJavaBased="true">
+  <Attribute Name="messageText" Type="java.lang.String"/>
+  <Attribute Name="userName" Type="java.lang.String"/>
+  <MethodAccessor IsCollection="false" Type="void" id="save"
+                  ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="ru.bdo.chat.model.ChatDataControl"
+                     BeanClass="ru.bdo.chat.model.ChatDataControl"
+                     id="ChatDataControl"/>
+</JavaBean>

@@ -1,0 +1,12 @@
+*.bat   eol=crlf
+*.sh    eol=lf
+
+*.jpr   text
+*.jws   text
+
+*.ear   -text
+*.war   -text
+
+*.jpg   -text
+*.png   -text
+*.sso   -text

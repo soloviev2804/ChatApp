@@ -1,0 +1,14 @@
+af|inputText::label {
+    padding: 0;
+}
+
+af|inputText.msgInp::content {
+    width: 448px;
+}
+
+.msg {
+    width: 430px;
+    height: 50px;
+    float: left;
+    white-space: normal;
+}

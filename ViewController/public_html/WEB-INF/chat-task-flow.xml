@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="chat-task-flow">
+    <default-activity id="__1">chatView</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name id="__2">chatModel</managed-bean-name>
+      <managed-bean-class id="__5">ru.bdo.chat.view.ChatCollectionModel</managed-bean-class>
+      <managed-bean-scope id="__4">view</managed-bean-scope>
+    </managed-bean>
+    <view id="chatView">
+      <page>/chatView.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

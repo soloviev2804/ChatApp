@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGridLayout id="chatView">
+    <af:gridRow height="20px" id="gr2">
+      <af:gridCell width="100%" id="gc2">
+        <af:subform id="s3" defaultCommand="ok">
+          <af:panelGroupLayout id="pgl2" layout="horizontal">
+            <af:inputText id="name_it" value="#{bindings.userName.inputValue}"
+                          placeholder="Введите имя"/>
+            <af:spacer width="7" height="10" id="s4"/>
+            <af:commandButton text="ok" id="ok" partialSubmit="true"/>
+          </af:panelGroupLayout>
+        </af:subform>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="0px" height="auto" id="gr1">
+      <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc1">
+        <af:table value="#{viewScope.chatModel}" var="row" id="t1"
+                  rowBandingInterval="1" width="500px"
+                  columnStretching="column:c1" rowSelection="none"
+                  columnSelection="none" disableColumnReordering="true"
+                  displayRow="last">
+          <af:column sortable="false" headerText="Сообщения" id="c1">
+            <af:panelBorderLayout id="pbl1">
+              <f:facet name="start"/>
+              <f:facet name="bottom"/>
+              <f:facet name="end">
+                <af:outputText value="#{row.created}" id="ot4">
+                  <af:convertDateTime type="time"/>
+                </af:outputText>
+              </f:facet>
+              <f:facet name="top">
+                <af:outputText value="#{row.author ne bindings.userName.inputValue?row.author:'Я'}"
+                               id="ot3" inlineStyle="font-weight:bolder"/>
+              </f:facet>
+              <div class="msg">
+                <af:outputText value="#{row.text}" id="ot2"/>
+              </div>
+            </af:panelBorderLayout>
+          </af:column>
+        </af:table>
+      </af:gridCell>
+    </af:gridRow>
+    <af:gridRow marginTop="0px" height="150px" id="gr3">
+      <af:gridCell width="100%" id="gc3">
+        <af:subform id="s1" defaultCommand="send">
+          <af:panelGroupLayout layout="horizontal"
+                               id="pgl1" partialTriggers="::s3:ok">
+            <af:inputText id="it2" value="#{bindings.messageText.inputValue}"
+                          disabled="#{bindings.userName.inputValue eq null}"
+                          rows="1" placeholder="Сообщение" styleClass="msgInp"/>
+            <af:spacer width="7" height="10" id="s2"/>
+            <af:commandButton id="send" 
+                              actionListener="#{bindings.save.execute}"
+                              disabled="#{bindings.userName.inputValue eq null}"
+                              icon="/img/send.png" shortDesc="Отправить"/>
+          </af:panelGroupLayout>
+        </af:subform>
+      </af:gridCell>
+    </af:gridRow>
+  </af:panelGridLayout>
+</jsp:root>

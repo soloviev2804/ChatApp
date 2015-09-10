@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.66.73" id="DataControls"
+                    Package="ru.bdo.chat.model">
+  <AdapterDataControl id="ChatDataControl"
+                      FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDefinition"
+                      SupportsTransactions="false" SupportsSortCollection="true"
+                      SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="ru.bdo.chat.model.ChatDataControl"
+                      BeanClass="ru.bdo.chat.model.ChatDataControl"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="ru.bdo.chat.model.ChatDataControl"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="ru.bdo.chat.model.ChatDataControl"
+                       xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>
